@@ -1,5 +1,13 @@
 # CIRK
 
+## Example
+
+**Task:** fix bug in payment calculation
+
+C: 3 | I: 2 | R: 3 | K: 3
+
+→ requires human review + controlled deployment
+
 ## AI writes the code. CIRK governs the execution.
 
 **CIRK in one line:**
