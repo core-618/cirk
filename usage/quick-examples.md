@@ -113,6 +113,51 @@ Reasoning:
 
 ---
 
+## Example 7 — Bug fix (trivial)
+
+Task: fix null check in cart total
+
+```text
+C1 I1 R1 K1
+```
+
+Policy:
+
+- autonomous execution
+- auto-approval allowed
+
+Reasoning:
+
+- single function, local fix
+- deterministic fix
+- low review burden
+- safe, localized change
+
+---
+
+## Example 8 — Critical deploy
+
+Task: migrate payment gateway provider
+
+```text
+C3 I2 R3 K3
+```
+
+Policy:
+
+- supervised execution
+- staged rollout required
+- deploy runbook mandatory
+
+Reasoning:
+
+- cross-system payment flow understanding
+- multiple verification cycles expected
+- mandatory human review
+- rollout must be staged and monitored
+
+---
+
 ## Copy-paste template
 
 ```text

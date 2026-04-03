@@ -1,5 +1,9 @@
 # CIRK
 
+> Stop estimating. Start controlling AI execution.
+
+CIRK replaces story points with a model that defines how AI should execute, review, and deploy work.
+
 ## Example
 
 **Task:** fix bug in payment calculation
@@ -8,10 +12,14 @@ C: 3 | I: 2 | R: 3 | K: 3
 
 → requires human review + controlled deployment
 
-## AI writes the code. CIRK governs the execution.
+## Quick start
 
-**CIRK in one line:**
-Define how autonomous a task can be based on **Context, Iteration, Review, and Risk**.
+1. Pick a task
+2. Score it: `C(1-3) I(1-3) R(1-3) K(1-3)`
+3. Apply the policy:
+   - **4–5** → automate
+   - **6–9** → require review
+   - **10+** → control execution
 
 CIRK is an open standard for classifying how AI-assisted software work should be executed.
 
@@ -43,10 +51,10 @@ Each task is represented as:
 [C, I, R, K]
 ```
 
-- **C — Context**: how much understanding the agent needs
-- **I — Iteration**: how many cycles are likely needed to converge
-- **R — Review**: how much human validation is required
-- **K — Integration Risk**: how risky or sensitive the rollout is
+- **C — Context**: How much context does the AI need?
+- **I — Iteration**: How many iterations until it works?
+- **R — Review**: How much human review is required?
+- **K — Integration Risk**: How dangerous is deploying this?
 
 Each dimension is scored from **1 to 3**:
 
