@@ -128,6 +128,12 @@ No specific implementation is required.
 
 ---
 
+## Notes
+
+- [Why CIRK does not include time](./why-not-time.md)
+
+---
+
 ## Contact
 
 [hello@core618.com](mailto:hello@core618.com)
