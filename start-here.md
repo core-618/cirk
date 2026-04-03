@@ -33,11 +33,13 @@ Meaning:
 
 ## Step 3 — Apply execution policy
 
-From that score, a team can decide:
+Sum the vector and apply the policy:
 
-- the agent may draft and implement
-- a human must review before merge
-- deployment can remain lightweight
+- **4–5** → automate (agent executes autonomously)
+- **6–9** → require review (human validates before merge)
+- **10+** → control execution (supervised, staged rollout)
+
+For the example above: C2 + I2 + R3 + K1 = **8** → require review.
 
 ---
 
