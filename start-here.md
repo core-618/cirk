@@ -35,9 +35,9 @@ Meaning:
 
 Sum the vector and apply the policy:
 
-- **≤ 5** → automate (agent executes autonomously)
-- **6–8** → require review (human validates before merge)
-- **9+** → control execution (supervised, staged rollout)
+- **4–5** → automate (agent executes autonomously)
+- **6–9** → require review (human validates before merge)
+- **10+** → control execution (supervised, staged rollout)
 
 For the example above: C2 + I2 + R3 + K1 = **8** → require review.
 

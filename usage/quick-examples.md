@@ -131,7 +131,7 @@ Reasoning:
 - single function, local fix
 - deterministic fix
 - low review burden
-- safe, additive change
+- safe, localized change
 
 ---
 

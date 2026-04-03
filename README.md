@@ -17,9 +17,9 @@ C: 3 | I: 2 | R: 3 | K: 3
 1. Pick a task
 2. Score it: `C(1-3) I(1-3) R(1-3) K(1-3)`
 3. Apply the policy:
-   - **≤ 5** → automate
-   - **6–8** → require review
-   - **9+** → control execution
+   - **4–5** → automate
+   - **6–9** → require review
+   - **10+** → control execution
 
 CIRK is an open standard for classifying how AI-assisted software work should be executed.
 
