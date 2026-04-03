@@ -67,3 +67,5 @@ CIRK answers:
 > How should this be executed safely?
 
 That is the more useful question in AI-native development.
+
+Story points governed human delivery for 20 years. CIRK is designed to govern AI delivery.
