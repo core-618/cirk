@@ -122,7 +122,7 @@ CIRK is designed to be:
 
 ## Adoption
 
-CIRK is a standard, not a product.
+CIRK is a proposed standard, not a product.
 
 It can be adopted in:
 
@@ -133,6 +133,18 @@ It can be adopted in:
 - governance layers such as Orbit618
 
 No specific implementation is required.
+
+---
+
+## Open questions
+
+These are tensions we are still debating:
+
+1. **What happens to roadmap predictability without story points?** CIRK governs execution, not timelines. Is execution governance enough, or does a complementary time layer still matter?
+2. **Does CIRK cover governance beyond engineering?** Compliance, reversibility, audit trails — should CIRK expand or stay scoped to engineering execution?
+3. **How does CIRK coexist with Scrum, Kanban, and SAFe?** CIRK replaces the estimation layer, not the process. But can it slot in without disrupting sprint planning and capacity allocation?
+
+If you have answers or counterexamples, [open an issue](https://github.com/core-618/cirk/issues).
 
 ---
 
