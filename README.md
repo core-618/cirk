@@ -154,6 +154,13 @@ If you have answers or counterexamples, [open an issue](https://github.com/core-
 
 ---
 
+## Development note
+
+This project is developed with AI-assisted workflows.
+AI tools support drafting, exploration, and implementation, while project direction, architecture, and review remain human-led.
+
+---
+
 ## Contact
 
 [hello@core618.com](mailto:hello@core618.com)
