@@ -1,3 +1,6 @@
 .DS_Store
 __MACOSX/
-.DS_Store
+
+# Internal files — never commit to public repo
+CLAUDE.md
+insights/
