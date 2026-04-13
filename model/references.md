@@ -30,7 +30,7 @@ First formal taxonomy of risks specific to autonomous AI agents: goal hijacking,
 
 Four functions: Govern, Map, Measure, Manage. DD6 operates in the "Map" function (understanding the problem space). CIRK operates in the "Measure" function (quantifying execution risk). Together they span two of the four NIST functions.
 
-### EU AI Act (August 2026 — high-risk obligations)
+### EU AI Act (2024) — high-risk obligations effective August 2026
 
 First enforceable, risk-based AI regulatory regime. Requires documentation, monitoring, traceability, and human oversight for high-risk systems. DD6's discovery audit trail provides traceability. CIRK's R3 and K3 scores can trigger compliance review requirements.
 
