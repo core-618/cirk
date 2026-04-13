@@ -46,7 +46,7 @@ Survey of ~500 organizations: only 30% report governance maturity level ≥ 3; 6
 
 ## Related work
 
-> The references below were identified and mapped with the assistance of AI research. They inform or validate the model and are cited for context, not as endorsement of having read each in full.
+> The references below (Related Work section) were identified and mapped with the assistance of AI research. They inform or validate the model and are cited for context, not as endorsement of having read each in full.
 
 ### Torres, T. (2021). *Continuous Discovery Habits*. Product Talk.
 
