@@ -1,0 +1,48 @@
+name: AI Code Review
+
+# Só nos PRs para `dev`.
+#
+# Sem o filtro, cada spec era revista três vezes: no PR para `dev`, na promoção
+# `dev -> stg` e na `stg -> main`. As promoções são fast-forward, portanto o
+# diff é o MESMO — três chamadas ao modelo para o mesmo código. É a lição da
+# MAM-0491, que tirou o gatilho `push` do CI por esta razão exacta.
+#
+# `dev` é o único sítio onde código novo é proposto. Nota para quem instalar
+# isto noutro repo: o workflow tem de existir no ramo BASE do PR, senão não
+# dispara — foi por isso que a primeira instalação no orbit618, feita só em
+# `main`, nunca corria nos PRs de desenvolvimento.
+on:
+  pull_request:
+    branches: [dev]
+    types: [opened, synchronize, reopened]
+
+# Um push a seguir a outro cancela a revisão anterior. Sem isto, quem faz
+# três commits seguidos paga três revisões e recebe três comentários.
+concurrency:
+  group: ai-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write   # mínimo para publicar a revisão; não dá para reduzir
+
+jobs:
+  ai-review:
+    runs-on: ubuntu-latest
+    # Sem timeout, um modelo que não responda prende o runner até ao limite da
+    # conta (6h) e ocupa a fila.
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: core-618/ai-reviewer@c440d455b049016b174aff183fbc41a697b3a527 # v1
+        # Fixo no SHA da COMMIT, não na tag. Uma tag é móvel: quem controlasse
+        # o `v1` passava a correr código à escolha com `pull-requests: write`
+        # nos nossos PRs. Ao subir a acção, actualizar este SHA à mão — foi o
+        # que se fez aqui, e é o custo (aceitável) de fixar.
+        #
+        # Este SHA traz a correcção da truncatura: com `max_tokens: 4096` a
+        # revisão vinha cortada a meio da frase, o `</FINDINGS>` nunca chegava,
+        # o JSON cru dos achados vazava para o corpo do comentário, e a revisão
+        # saía como comentário em vez de review — quatro sintomas de uma causa.
+        with:
+          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
