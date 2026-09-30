@@ -14,7 +14,7 @@ name: AI Code Review
 on:
   pull_request:
     branches: [dev]
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, ready_for_review]
 
 # Um push a seguir a outro cancela a revisão anterior. Sem isto, quem faz
 # três commits seguidos paga três revisões e recebe três comentários.
@@ -34,15 +34,12 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - uses: core-618/ai-reviewer@c440d455b049016b174aff183fbc41a697b3a527 # v1
+      - uses: core-618/ai-reviewer@37582fa4940f8e6ab9ea53fa2175999dc82a0281 # single compact status
         # Fixo no SHA da COMMIT, não na tag. Uma tag é móvel: quem controlasse
         # o `v1` passava a correr código à escolha com `pull-requests: write`
         # nos nossos PRs. Ao subir a acção, actualizar este SHA à mão — foi o
         # que se fez aqui, e é o custo (aceitável) de fixar.
         #
-        # Este SHA traz a correcção da truncatura: com `max_tokens: 4096` a
-        # revisão vinha cortada a meio da frase, o `</FINDINGS>` nunca chegava,
-        # o JSON cru dos achados vazava para o corpo do comentário, e a revisão
-        # saía como comentário em vez de review — quatro sintomas de uma causa.
+        # Compact status updates one owned comment; full report stays in Actions.
         with:
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}

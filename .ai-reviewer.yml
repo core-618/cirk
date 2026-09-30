@@ -1,0 +1,3 @@
+# CORE-0340: one mutable status; reuse only complete identical inputs.
+output_mode: compact
+# Preserve engine defaults for model, token budget and file selection.
